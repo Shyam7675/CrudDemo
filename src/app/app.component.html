@@ -1,0 +1,64 @@
+
+
+
+<div class="container">
+
+        <h5 class="text-success fs-3 text-center fw-bold my-3">Inverntory Management</h5>
+        <div [ngClass]="!cardHideShow ? 'd-none' : ''" class="card shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <form [formGroup]="productFormData" autocomplete="off" (ngSubmit)="onSave()">
+                    <div class="row">
+                        <div class="form-group mb-3 col-6">
+                            <label>Product Name:</label>
+                            <input type="text" class="form-control" id="name" formControlName="name" placeholder="enter product name" />
+                        </div>
+                        <div class="form-group mb-3 col-6">
+                            <label>Product Price:</label>
+                            <input required type="number" class="form-control" id="price" formControlName="price" placeholder="enter product price" />
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                              </div>
+                        </div>
+                        <div class="form-group mb-3 col-6">
+                            <label>Product Description:</label>
+                            <textarea type="text" class="form-control" id="desc" formControlName="desc" placeholder="enter product Description"></textarea>
+                        </div>
+                    </div>
+                   <div >
+
+                    <button  class="btn btn-primary">
+                        save
+                    </button>
+                   </div>
+                </form>
+            </div>
+            
+        </div>
+        <div [ngClass]="cardHideShow ? 'd-none' : ''">
+            <button ngClass="" (click)="addProduct()" class="btn btn-primary">Add Product</button>
+        </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todoList">
+                <td>{{todo.id}}</td>
+                <td>{{todo.prd_name}}</td>
+                <td>{{todo.prd_description}}</td>
+                <td>{{todo.prd_price}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary me-3" (click)="editClick(todo)" >Edit</button>
+                    <button type="button" (click)="deleteAction(todo.id)" class="btn btn-danger" >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

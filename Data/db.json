@@ -1,0 +1,16 @@
+{
+  "inventoryData": [
+    {
+      "prd_name": "123123",
+      "prd_description": "s",
+      "prd_price": 12312,
+      "id": 1647981040775
+    },
+    {
+      "prd_name": "dsf",
+      "prd_description": "dfgdf",
+      "prd_price": 1231,
+      "id": 1648028701291
+    }
+  ]
+}
